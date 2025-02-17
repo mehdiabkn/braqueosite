@@ -1,52 +1,51 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Script from "next/script";
+'use client'
 
-const inter = Inter({ subsets: ["latin"] });
+import { Inter } from 'next/font/google'
+import { useEffect } from 'react'
+import { useRouter, usePathname } from 'next/navigation'
+import './globals.css'
+import Navigation from '../components/Navigation'
+import 'leaflet/dist/leaflet.css'
 
-export const metadata: Metadata = {
-  title: "Agence de développement d\'applications & sites web sur mesure | Braqueo.fr",
-  description: "Développement d\'applications mobiles iOS/Android et sites web sur mesure. Top 100 App Store, +1200 utilisateurs, CRM personnalisé. Expertise Next.js, React Native, Shopify.",
-  keywords: "développement application mobile, développement web, iOS, Android, React Native, Next.js, Shopify, CRM sur mesure",
-  openGraph: {
-    title: "Agence de développement d'applications & sites web sur mesure | Braqueo.fr",
-    description: "Développement d'applications mobiles iOS/Android et sites web sur mesure. Top 100 App Store, +1200 utilisateurs, CRM personnalisé.",
-    url: "https://braqueo.fr",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Agence de développement d'applications & sites web sur mesure | Braqueo.fr",
-    description: "Développement d'applications mobiles iOS/Android et sites web sur mesure. Top 100 App Store, +1200 utilisateurs, CRM personnalisé.",
-  }
-};
+const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
+  const router = useRouter()
+  const pathname = usePathname()
+  
+  useEffect(() => {
+    if (pathname === '/') {
+      const user = localStorage.getItem('user')
+      const token = localStorage.getItem('token')
+
+      if (user && token) {
+        try {
+          const userData = JSON.parse(user)
+          if (userData.role === 'SEEKER') {
+            router.replace('/search')
+          } else if (userData.role === 'FINDER') {
+            router.replace('/my-items')
+          }
+        } catch (error) {
+          localStorage.removeItem('user')
+          localStorage.removeItem('token')
+        }
+      }
+    }
+  }, [pathname, router])
+
   return (
     <html lang="fr">
-      <Script id="schema-org" type="application/ld+json">
-        {`
-          {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "LyamApps",
-            "url": "https://lyamapps.com",
-            "alternateName": "Braqueo",
-            "sameAs": ["https://braqueo.fr"],
-            "description": "Agence de développement d'applications mobiles et sites web sur mesure",
-            "address": {
-              "@type": "PostalAddress",
-              "addressCountry": "FR"
-            }
-          }
-        `}
-      </Script>
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} bg-gradient-to-br from-gray-900 to-gray-700 text-white`}>
+        <Navigation />
+        <main className="pt-24">
+          {children}
+        </main>
+      </body>
     </html>
-  );
+  )
 }
