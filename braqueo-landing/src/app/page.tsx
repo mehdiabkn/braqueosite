@@ -1,4 +1,4 @@
-import { Calendar, Code, Smartphone, Globe } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -26,30 +26,29 @@ export default function Home() {
             <p className="text-xl mb-6">
               Vous avez un projet qui inclut du dév ? 
             </p>
-            <a
-              href="https://calendly.com/mehdi-aberkane-pro/30min"
+            
+            <a  href="https://calendly.com/mehdi-aberkane-pro/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-100 transition-colors"
             >
-            
               <Calendar className="w-5 h-5 mr-2" />
               Prenons un créneau
             </a>
           </div>
-          <div className="pt-12 border-t border-gray-800">
-          <p className="text-gray-400 mb-4">Voici notre vrai site</p>
-          <a href="https://lyamapps.com" rel="noopener noreferrer"
-            className="text-blue-400 hover:text-blue-300 transition-colors font-semibold text-lg"
-          >
-          lyamapps.com
-          </a>
+          <div className="max-w-4xl mx-auto text-center pt-12 border-t border-gray-800 mt-12">
+            <p className="text-gray-400 mb-4">Voici notre vrai site</p>
+            <a 
+              href="https://lyamapps.com" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 transition-colors font-semibold text-lg"
+            >
+              lyamapps.com
+            </a>
           </div>
         </div>
       </section>
-
-
-
     </main>
   );
 }
