@@ -23,7 +23,7 @@ export default function Home() {
                 allowFullScreen
               />
             </div>
-            <p className="text-xl font-bold mb-6">
+            <p className="text-xl mb-6">
               Vous avez un projet qui inclut du dév ? 
             </p>
             <a
@@ -36,6 +36,14 @@ export default function Home() {
               <Calendar className="w-5 h-5 mr-2" />
               Prenons un créneau
             </a>
+          </div>
+          <div className="pt-12 border-t border-gray-800">
+          <p className="text-gray-400 mb-4">Voici notre vrai site</p>
+          <a href="https://lyamapps.com" rel="noopener noreferrer"
+            className="text-blue-400 hover:text-blue-300 transition-colors font-semibold text-lg"
+          >
+          lyamapps.com
+          </a>
           </div>
         </div>
       </section>
