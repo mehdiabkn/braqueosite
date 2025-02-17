@@ -8,7 +8,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              De l'idée à la réalisation
+              De l&apos;idée à la réalisation
             </h1>
             <p className="text-xl mb-8">
               Transformez votre vision en applications et sites web performants

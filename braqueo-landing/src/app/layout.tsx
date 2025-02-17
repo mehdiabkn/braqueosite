@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Braqueo.fr - Développement d'applications & sites web",
+  title: "PRANKED BY LYAMAPPS",
   description: "Nous développons vos applications mobiles et sites web sur mesure",
 };
 
