@@ -15,13 +15,15 @@ export default function Home() {
             </p>
             {/* Remplacer src par le lien de votre vidéo */}
             <div className="aspect-video mb-8">
-              <iframe 
-                className="w-full h-full"
-                src="VOTRE_LIEN_VIDEO"
-                title="Présentation"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+
+            <iframe
+              src="https://www.youtube.com/embed/SnQGjpL06pM?rel=0&controls=1&modestbranding=1&showinfo=0&playsinline=1"
+              title="Vous y avez cru ?"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full aspect-video rounded-lg shadow-lg"
+            ></iframe>
             </div>
             <p className="text-xl mb-6">
               Vous avez un projet qui inclut du dév ? 
