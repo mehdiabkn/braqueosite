@@ -9,11 +9,6 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-    other: {
-      rel: 'apple-touch-icon-precomposed',
-      url: '/apple-touch-icon-precomposed.png'
-    }
   },
   title: "LyamApps - Agence de développement d\'applications & sites web sur mesure | Braqueo.fr",
   description: "Développement d\'applications mobiles iOS/Android et sites web sur mesure. Top 100 App Store, +1200 utilisateurs, CRM personnalisé. Expertise Next.js, React Native, Shopify.",
